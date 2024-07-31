@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Visualize{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        #sem-label {
+            font-size: 16px;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .sem-marks-input {
+            width: 100px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .header {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .mb-3 {
+            max-height: 70%;
+            max-width: 50%;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%; /* Full-width input */
+        }
+
+        .mb-1 {
+            align-content: center;
+            margin-left: 30%;
+        }
+
+        body {
+            background-image: url('{% static "semresults/graphs/images/ranger-4df6c1b6.png" %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header"><b>WELCOME TO DATA VISUALIZATION</b></h1>
+    {% block content %}
+    <form class="mb-1" action="getmarks" method="get">
+        <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="reg">Register No</label>
+            <input type="text" name="reg" id="reg" required>
+
+            <label for="sem1" id="sem-label">Sem1</label>
+            <input type="number" id="sem1" name="sem1" step="0.0001" max="10" required><br>
+
+            <label for="sem2" id="sem-label">Sem2</label>
+            <input type="number" id="sem2" name="sem2" step="0.0001" max="10" required><br>
+
+            <label for="sem3" id="sem-label">Sem3</label>
+            <input type="number" id="sem3" name="sem3" step="0.0001" max="10" required><br>
+
+            <label for="sem4" id="sem-label">Sem4</label>
+            <input type="number" id="sem4" name="sem4" step="0.0001" max="10" required><br>
+
+            <label for="sem5" id="sem-label">Sem5</label>
+            <input type="number" id="sem5" name="sem5" step="0.0001" max="10"><br>
+
+            <label for="sem6" id="sem-label">Sem6</label>
+            <input type="number" id="sem6" name="sem6" step="0.0001" max="10"><br>
+
+            <label for="sem7" id="sem-label">Sem7</label>
+            <input type="number" id="sem7" name="sem7" step="0.0001" max="10"><br>
+
+            <label for="sem8" id="sem-label">Sem8</label>
+            <input type="number" id="sem8" name="sem8" step="0.0001" max="10"><br>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

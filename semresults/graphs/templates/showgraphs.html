@@ -1,0 +1,26 @@
+{% extends "semmarks.html" %}
+
+{% block title %}
+Enjoy Your Graphs
+{% endblock %}
+
+{% block content %}
+<center>
+<h2>Hey!, Welcome {{name}}</h2>
+<p>Here you go for your pictorial representation</p>
+</center>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Semester Marks - Line Graph</h3>
+            <img src="data:image/png;base64,{{ img_str_line }}" alt="Semester Marks Line Graph" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h3>Semester Marks - Pie Chart</h3>
+            <img src="data:image/png;base64,{{ img_str_pie }}" alt="Semester Marks Pie Chart" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
